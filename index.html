@@ -4,9 +4,408 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/92707715c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Music Player</title>
 </head>
-<body>
+<body class="h-screen w-full bg-dominant grid place-items-center text-complementary">
     
+    <!-- Header -->
+    <header class="w-[85%] h-[95%] flex flex-wrap relative">
+
+        <!-- Menu Side (left side) -->
+        <div class="menu-side w-[25%] h-[90%] bg-dominant-1 shadow-[5px_0_2px_0px_rgba(9,15,31,1)]">
+
+            <!-- Menu Heading -->
+            <h1 class="text-xl font-medium m-4 tracking-wide"> Playlist </h1>
+
+            <!-- Playlists -->
+            <div class="playlist ml-4 mt-6 space-y-1">
+                
+                <!-- Current Playlist -->
+                <h4 class="active-state group text-base font-light text-complementary-1 cursor-pointer flex items-center duration-300 ease-linear hover:text-complementary">
+                    <span class="bullet-span relative mr-8 before:absolute before:w-2 before:h-2 before:border before:border-complementary-1 before:rounded-full before:duration-300 before:ease-linear before:-top-1  group-hover:before:border-complementary"></span> 
+                    <i class="bi bi-music-note-beamed"></i> 
+                    <span class="ml-2">Playlist</span> 
+                </h4>
+
+                <!-- Last listening song -->
+                <h4 class="group text-base font-light text-complementary-1 cursor-pointer flex items-center duration-300 ease-linear hover:text-complementary">
+                    <span class="bullet-span relative mr-8 before:absolute before:w-2 before:h-2 before:border before:border-complementary-1 before:rounded-full before:duration-300 before:ease-linear before:-top-1 group-hover:before:border-complementary"></span> 
+                    <i class="bi bi-music-note-beamed"></i> 
+                    <span class="ml-2">Last Listening</span>
+                </h4>
+
+                <!-- Recommended songs -->
+                <h4 class="group text-base font-light text-complementary-1 cursor-pointer flex items-center duration-300 ease-linear hover:text-complementary">
+                    <span class="bullet-span relative mr-8 before:absolute before:w-2 before:h-2 before:border before:border-complementary-1 before:rounded-full before:duration-300 before:ease-linear before:-top-1 group-hover:before:border-complementary"></span> 
+                    <i class="bi bi-music-note-beamed"></i> 
+                    <span class="ml-2">Recommend</span>  
+                </h4>
+            </div>
+
+            <!-- Menu song -->
+            <div class="menu-song overflow-y-scroll remove-scrollbar w-full h-[21.5rem] mt-8">
+                
+                <!-- First Song -->
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+                <li class="songItem relative p-2 flex items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10">
+                    <span class="song-id font-semibold text-complementary-1 text-sm">01</span>
+                    <img src="img/1.jpg" alt="on-my-way-img" class="w-8 h-8 mx-2">
+                    <h5 class="w-36 mr-1 font-semibold truncate text-sm">
+                        On my way <br> 
+                        <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                    </h5>
+                    <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-lg absolute right-3"></i>
+                </li>
+
+                <!-- Menu song cards end here -->
+            </div>
+
+        </div>
+
+        <!-- Song Side -->
+        <div class="song-side w-[75%] h-[90%] bg-dominant-2 relative before:absolute before:w-full before:h-72 before:bg-[url('../bg.png')] before:bg-center before:-z-10 z-20">
+            <nav class="w-[90%] h-[10%] mx-auto flex justify-between items-center">
+                <ul class="flex text-complementary-1">
+                    <li class="text-sm relative mr-5 cursor-pointer duration-300 ease-linear hover:text-complementary text-complementary"> 
+                        Discover 
+                        <span class="absolute w-full h-0.5 bg-accent -bottom-1 left-0 rounded-2xl"></span> 
+                    </li>
+                    <li class="text-sm relative mr-5 cursor-pointer duration-300 ease-linear hover:text-complementary"> 
+                        MY LIBRARY 
+                    </li>
+                    <li class="text-sm relative mr-5 cursor-pointer duration-300 ease-linear hover:text-complementary"> 
+                        RADIO 
+                    </li>
+                </ul>
+
+                <div class="search relative flex items-center w-2/5 pl-2 overflow-hidden rounded-2xl text-complementary-2 bg-complementary-3 bg-opacity-10">
+                    <i class="bi bi-search mr-1"></i>
+                    <input type="text" placeholder="Search Music..." class="bg-inherit grow px-2 py-2 text-xs focus:outline-none focus:text-complementary">
+                </div>
+
+                <div class="user relative w-8 h-8 rounded-full border border-complementary">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQEVYBjbuUXD_Q/profile-displayphoto-shrink_800_800/0/1663920881214?e=1689811200&v=beta&t=9uNyunvrep6S04tn2CY89bAx81oVc8mD6cnW1QgbJro" 
+                    alt="user-pic"
+                    class="w-full h-full rounded-full"
+                    >
+                </div>
+            </nav>
+
+            <div class="content w-[90%] h-[30%] m-auto pt-5">
+                <h1 class="text-2xl font-semibold"> Alan Walker - Fade </h1>
+                <p class="text-xs font-normal text-complementary-1 m-1"> 
+                    You were the shadow to my light did you feel us Another start you fade <br> 
+                    Away afraid our aim is out of sight Wanna see us Alive
+                </p>
+                <div class="buttons mt-4">
+                    <button class="w-32 h-8 text-sm border-2 border-accent outline-none rounded-3xl text-complementary bg-accent-1 cursor-pointer duration-300 ease-linear hover:bg-inherit hover:text-accent tracking-widest"> PLAY </button>
+                    <button class="w-32 h-8 text-sm border-2 border-accent outline-none rounded-3xl text-accent bg-inherit cursor-pointer duration-300 ease-linear hover:bg-accent-1 hover:text-complementary tracking-widest"> FOLLOW </button>
+                </div>
+            </div>
+
+            <!-- Popular Songs Container -->
+            <div class="popular-song w-[90%] h-auto m-auto mt-2">
+
+                <!-- Popular Songs Heading -->
+                <div class="h4 flex items-center justify-between">
+                    <h4 class="text-lg font-semibold"> Popular Song </h4>
+                    <div class="btn-s">
+                        <i id="pop-song-left" class="bi bi-arrow-left-short text-complementary-4 cursor-pointer duration-300 ease-linear hover:text-complementary"></i>
+                        <i id="pop-song-right" class="bi bi-arrow-right-short text-complementary-4 cursor-pointer duration-300 ease-linear hover:text-complementary"></i>
+                    </div>
+                </div>
+                
+                <!-- Popular Songs List -->
+                <div class="pop-song w-full h-36 mt-2 flex gap-1 overflow-x-scroll remove-scrollbar scroll-smooth">
+
+                    <!-- First song card -->
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+                    <li class="songItem group/songItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-24 h-24 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear group-hover/songItem:opacity-40">
+                            <i id="1" class="playlistPlay fa fa-solid fa-circle-play text-xl absolute opacity-0 duration-300 ease-linear group-hover/songItem:opacity-100"></i>
+                        </div>
+                        <h5 class="w-24 text-center mt-1 mx-auto font-semibold truncate text-sm leading-4">
+                            <span> On my way </span> <br>
+                            <span class="subtitle text-[0.75rem] text-complementary-1">Alan Walker</span>
+                        </h5>
+                    </li>
+
+                </div>
+
+            </div>
+
+            <!-- Popular Artists Container -->
+            <div class="popular-artists w-[90%] h-auto m-auto mt-2 border border-white">
+                <div class="h4 flex items-center justify-between">
+                    <h4 class="text-lg font-semibold"> Popular Artists </h4>
+                    <div class="btn-s">
+                        <i class="bi bi-arrow-left-short text-complementary-4 cursor-pointer duration-300 ease-linear hover:text-complementary"></i>
+                        <i class="bi bi-arrow-right-short text-complementary-4 cursor-pointer duration-300 ease-linear hover:text-complementary"></i>
+                    </div>
+                </div>
+
+                <!-- Popular Artists List -->
+                <div class="item w-full h-20 mt-2 flex gap-1 overflow-x-scroll remove-scrollbar scroll-smooth">
+
+                    <!-- First song card -->
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+                    <li class="artistItem group/artistItem relative p-2 flex flex-col items-center cursor-pointer duration-300 ease-linear hover:bg-complementary-2 hover:bg-opacity-10 min-w-[6.25rem]">
+                        <div class="image-play relative w-16 h-16 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="on-my-way-img" class="absolute w-full h-full mx-2 duration-300 ease-linear rounded-full group-hover/artistItem:scale-110">
+                        </div>
+                    </li>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Master Play (neeche wali side) -->
+        <div class="master-play w-full h-[10%] bg-dominant-1 shadow-[0_3px_8px_0px_rgba(9,15,31,1)] flex items-center px-5">
+            <div class="wave w-8 h-8 pb-1 flex items-end mr-2">
+                <div class="wave1 w-1 h-2.5 bg-accent mr-1 rounded-t-xl animate-[wave_1s_linear_infinite]"></div>
+                <div class="wave1 w-1 h-3 bg-accent mr-1 rounded-t-xl animate-[wave_1s_linear_infinite] animation-delay-333"></div>
+                <div class="wave1 w-1 h-2 bg-accent mr-1 rounded-t-xl animate-[wave_1s_linear_infinite] animation-delay-666"></div>
+            </div>
+            <img id="poster-master-play" src="img/20.jpg" alt="india-img" class="w-9 h-9">
+            <h5 id="title" class="w-32 ml-4 leading-4 font-semibold text-sm truncate tracking-wider">
+                Vande Mataram <br>
+                <span class="subtitle text-xs text-complementary-1 w-full truncate tracking-wider"> Bankim Chandra </span>
+            </h5>
+            <div class="icon ml-5 mr-6 flex items-center outline-none">
+                <i class="shuffle bi bi-music-note-beamed ml-1 mr-2 cursor-pointer outline-none"></i>
+                <i class="bi bi-skip-start-fill ml-1 mr-2 cursor-pointer outline-none"></i>
+                <i class="bi bi-play-fill ml-1 mr-2 cursor-pointer outline-none border border-complementary-2 border-opacity-10 px-2 py-1 rounded-full"></i>
+                <i class="bi bi-skip-end-fill ml-1 mr-2 cursor-pointer outline-none"></i>
+                <i id="download-music" class="bi bi-cloud-arrow-down-fill ml-1 mr-2 cursor-pointer outline-none"></i>
+            </div>
+
+            <span id="currentStart" class="w-8 text-xs mr-5"> 0:00 </span>
+
+            <div class="bar relative w-1/4 h-0.5">
+                <input type="range" id="seek" min="0" max="100" class="absolute m-0 w-full h-1 top-0 left-0 -translate-y-[25%] cursor-pointer z-50 opacity-10 p-0">
+                <div id="bar2" class="bar2 absolute bg-accent w-1/2 h-full top-0 duration-1000 ease-linear"></div>
+                <div class="dot absolute w-1 h-1 bg-accent rounded-full left-0 top-0 -translate-y-[25%] duration-1000 ease-linear before:absolute before:w-2 before:h-2 before:border before:border-accent before:rounded-full before:-translate-x-[25%] before:-translate-y-[25%]"></div>
+            </div>
+
+            <span id="currentEnd" class="w-8 text-xs mx-5"> 0:30 </span>
+
+            <i id="vol-icon" class="bi bi-volume-down-fill text-xl mx-2"></i>
+            <div class="vol relative w-1/6 h-0.5">
+                <input type="range" id="vol" min="0" max="100" class="absolute m-0 w-full h-1 top-0 left-0 -translate-y-[25%] cursor-pointer z-50 opacity-10 p-0">
+                <div class="vol-bar absolute bg-accent w-1/2 h-full top-0 duration-1000 ease-linear"></div>
+                <div id="vol-dot" class="dot absolute w-1 h-1 bg-accent rounded-full left-0 top-0 -translate-y-[25%] duration-1000 ease-linear before:absolute before:w-2 before:h-2 before:border before:border-accent before:rounded-full before:-translate-x-[25%] before:-translate-y-[25%]"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>
