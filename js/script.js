@@ -202,7 +202,6 @@ const songs = [
         `,
         poster : '../img/20.jpg'
     }
-    
 ];
 
 Array.from(document.getElementsByClassName('songItem')).forEach((e, i) => {
@@ -216,37 +215,144 @@ Array.from(document.getElementsByClassName('songItem')).forEach((e, i) => {
 let masterPlay = document.getElementById('masterPlay');
 let wave = document.getElementById('wave');
 
-function toggleMasterPlay() {
-    masterPlay.classList.toggle('bi-play-fill');
-    masterPlay.classList.toggle('bi-pause-fill');
+function playMusic() {
+    music.play();
+    masterPlay.classList.remove('bi-play-fill');
+    masterPlay.classList.add('bi-pause-fill');
+}
+
+function pauseMusic() {
+    music.pause();
+    masterPlay.classList.remove('bi-pause-fill');
+    masterPlay.classList.add('bi-play-fill');
 }
 
 masterPlay.addEventListener('click', () => {
     if(music.paused || music.currentTime <= 0) {
-        music.play();
+        playMusic();
         wave.classList.add('active-wave');
-        toggleMasterPlay();
     } else {
-        music.pause();
+        pauseMusic();
         wave.classList.remove('active-wave');
-        toggleMasterPlay();
     }
 });
 
+let posterMasterPlay = document.getElementById('poster-master-play');
+let title = document.getElementById('title');
 let index = 0;
 
 Array.from(document.getElementsByClassName('playlistPlay')).forEach((e) => {
-    console.log(e);
-    console.log('.');
     e.addEventListener('click', (el) => {
         index = el.target.id;
         music.src = `../audio/${index}.mp3`;
-        music.play();
-        toggleMasterPlay();
+        posterMasterPlay.src = `../img/${index}.jpg`;
+        playMusic();
+        
+        let songTitles = songs.filter((els) => {
+            return els.id == index;
+        });
+
+        songTitles.forEach(elss => {
+            let songName = elss.songName;
+            title.innerHTML = songName;
+        });
+
     });
 });
 
+let currentStart = document.getElementById('currentStart');
+let currentEnd = document.getElementById('currentEnd');
+let seek = document.getElementById('seek');
+let bar2 = document.getElementById('bar2');
+let dot = document.getElementsByClassName('dot')[0];
 
+function timeToStringTime(time) {
+    let minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+
+    if(seconds < 10) seconds = '0' + seconds;
+    return minutes + ':' + seconds;
+}
+
+music.addEventListener('timeupdate', () => {
+    let music_curr = music.currentTime;
+    let music_dur = music.duration;
+
+    currentStart.innerText = timeToStringTime(music_curr);
+    currentEnd.innerText = timeToStringTime(music_dur);
+
+    let progressBar = parseInt((music_curr / music_dur) * 100);
+    seek.value = progressBar;
+
+    let seekBar = seek.value;
+    bar2.style.width = `${seekBar}%`;
+    dot.style.left = `${seekBar}%`;
+
+});
+
+seek.addEventListener('change', () => {
+    music.currentTime = seek.value / 100 * music.duration;
+});
+
+let vol = document.getElementById('vol');
+let volIcon = document.getElementById('vol-icon');
+let volBar = document.getElementById('vol-bar');
+let volDot = document.getElementById('vol-dot');
+
+vol.addEventListener('change', () => {
+    if(vol.value == 0) {
+        volIcon.classList.remove('bi-volume-up-fill');
+        volIcon.classList.remove('bi-volume-down-fill');
+        volIcon.classList.add('bi-volume-off-fill');
+    } else if(vol.value > 50) {
+        volIcon.classList.remove('bi-volume-down-fill');
+        volIcon.classList.remove('bi-volume-off-fill');
+        volIcon.classList.add('bi-volume-up-fill');
+    } else {
+        volIcon.classList.remove('bi-volume-up-fill');
+        volIcon.classList.remove('bi-volume-off-fill');
+        volIcon.classList.add('bi-volume-down-fill');
+    }
+    volBar.style.width = `${vol.value}%`;
+    volDot.style.left = `${vol.value}%`;
+    music.volume = vol.value / 100;
+});
+
+let back = document.getElementById('back');
+let next = document.getElementById('next');
+
+back.addEventListener('click', () => {
+    index = (index - 2 + songs.length) % songs.length + 1;
+    music.src = `../audio/${index}.mp3`;
+    posterMasterPlay.src = `../img/${index}.jpg`;
+    playMusic();
+
+    let songTitles = songs.filter((els) => {
+        return els.id == index;
+    });
+
+    songTitles.forEach(elss => {
+        let songName = elss.songName;
+        title.innerHTML = songName;
+    });
+
+});
+
+next.addEventListener('click', () => {
+    index = (index) % songs.length + 1;
+    music.src = `../audio/${index}.mp3`;
+    posterMasterPlay.src = `../img/${index}.jpg`;
+    playMusic();
+
+    let songTitles = songs.filter((els) => {
+        return els.id == index;
+    });
+
+    songTitles.forEach(elss => {
+        let songName = elss.songName;
+        title.innerHTML = songName;
+    });
+});
 
 // Popular Songs Left Right
 
